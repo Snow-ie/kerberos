@@ -5,8 +5,8 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineDown } from "react-icons/ai";
 import Image from "next/image";
-import mainLogo from "../image/mainLogo.svg";
-import textLogo from "../image/textLogo.svg";
+import mainLogo from "@/public/image/mainLogo.svg";
+import textLogo from "@/public/image/textLogo.svg";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -35,19 +35,25 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo Section */}
           <div className="flex items-center">
-            <Image
-              src={mainLogo}
-              alt="Kerberos Logo"
-              width={32}
-              height={32}
-              className="mr-2"
-            />
-            <Image
-              src={textLogo}
-              alt="Kerberos Text Logo"
-              width={100}
-              height={24}
-            />
+            {" "}
+            <div className="relative w-8 h-8">
+              <Image
+                src={mainLogo}
+                alt="Kerberos Logo"
+                fill
+                loading="eager" // ✅ Use eager loading instead of priority
+                className="object-contain"
+              />
+            </div>
+            <div className="relative w-24 h-6">
+              <Image
+                src={textLogo}
+                alt="Kerberos Text Logo"
+                fill
+                loading="eager" // ✅ Use eager loading instead of priority
+                className="object-contain"
+              />
+            </div>
           </div>
 
           {/* Styled Mobile Menu Button */}
