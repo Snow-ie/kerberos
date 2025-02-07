@@ -20,7 +20,6 @@ const WhyChooseUs = () => {
               height={300}
               className="object-cover w-full h-full"
               priority
-              style={{ width: "auto", height: "auto" }}
             />
           </div>
         </div>
