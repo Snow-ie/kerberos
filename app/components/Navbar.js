@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { AiOutlineMenu, AiOutlineClose, AiOutlineDown } from "react-icons/ai";
+
 import Image from "next/image";
 import mainLogo from "@/public/image/mainLogo.svg";
 import textLogo from "@/public/image/textLogo.svg";
+import { ChevronDown, ChevronUp, AlignJustify, XCircle } from "lucide-react";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -31,7 +32,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white text-text fixed top-0 left-0 w-full z-50">
-      <div className="container mx-auto p-4  lg:p-8">
+      <div className="container mx-auto p-4">
         <div className="flex justify-between items-center">
           {/* Logo Section */}
           <div className="flex items-center">
@@ -62,9 +63,9 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
             {isMenuOpen ? (
-              <AiOutlineClose className="text-2xl" />
+              <XCircle className="text-2xl" />
             ) : (
-              <AiOutlineMenu className="text-2xl" />
+              <AlignJustify className="text-2xl" />
             )}
           </button>
 
@@ -77,27 +78,38 @@ export default function Navbar() {
           >
             <Link
               href="/"
-              className={`block md:inline py-2 px-4 rounded ${
-                pathname === "/" ? "bg-primary-active text-white" : "text-text"
-              } hover:text-text-hover focus:text-text-focus`}
+              className={`block md:inline py-2 px-4 relative ${
+                pathname === "/" ? "text-primary" : "text-text"
+              } hover:text-primary after:block after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300`}
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
 
             {/* Dropdown */}
-            <div className="relative md:inline-block dropdown">
+            <div className="relative md:inline-block dropdown z-50">
+              {/* Dropdown Button */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   setIsDropdownOpen((prev) => !prev);
                 }}
-                className="flex items-center text-text hover:text-text-hover focus:text-text-focus py-2 px-4"
+                className="flex items-center text-text hover:text-primary py-2 px-4 relative after:block after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
               >
-                Services <AiOutlineDown className="ml-2 text-primary text-lg" />
+                Services{" "}
+                {isDropdownOpen ? (
+                  <ChevronUp className="ml-2 text-primary text-lg" />
+                ) : (
+                  <ChevronDown className="ml-2 text-primary text-lg" />
+                )}
               </button>
+
+              {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute bg-white text-text shadow-md rounded mt-2 w-40 left-0">
+                <div
+                  className="absolute bg-white text-text shadow-md rounded mt-2 w-40 left-0 bg-no-repeat bg-cover z-50"
+                  style={{ backgroundImage: "url('/your-image-path.jpg')" }}
+                >
                   <Link
                     href="/services/energy"
                     className={`block px-4 py-2 ${
@@ -132,22 +144,18 @@ export default function Navbar() {
 
             <Link
               href="/about"
-              className={`block md:inline py-2 px-4 rounded ${
-                pathname === "/about"
-                  ? "bg-primary-active text-white"
-                  : "text-text"
-              } hover:text-text-hover focus:text-text-focus`}
+              className={`block md:inline py-2 px-4 relative ${
+                pathname === "/about" ? "text-primary" : "text-text"
+              } hover:text-primary after:block after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300`}
               onClick={() => setIsMenuOpen(false)}
             >
               About Us
             </Link>
             <Link
               href="/contact"
-              className={`block md:inline py-2 px-4 rounded ${
-                pathname === "/contact"
-                  ? "bg-primary-active text-white"
-                  : "text-text"
-              } hover:text-text-hover focus:text-text-focus`}
+              className={`block md:inline py-2 px-4 relative ${
+                pathname === "/contact" ? "text-primary" : "text-text"
+              } hover:text-primary after:block after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300`}
               onClick={() => setIsMenuOpen(false)}
             >
               Contact Us

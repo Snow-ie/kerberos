@@ -11,171 +11,57 @@ import { FiPhone, FiMapPin, FiClock } from "react-icons/fi";
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-gray-800 py-10 border-t">
-      <div className="container mx-auto p-4 lg:p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gray-50 text-gray-800 py-12 border-t">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-10">
           {/* Services */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Our Services</h3>
             <ul className="space-y-2 text-gray-600">
+              {[
+                "Business Strategy Consulting",
+                "Financial Advisory",
+                "Operational Efficiency",
+                "IT & Digital Transformation",
+                "Risk Management",
+              ].map((service, index) => (
+                <li key={index}>
+                  <Link
+                    href="#"
+                    className="hover:text-primary-hover transition-all"
+                  >
+                    {service}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link
-                  href="/services/business-strategy"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Business Strategy Consulting
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/financial-advisory"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Financial Advisory
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/operational-efficiency"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Operational Efficiency
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/digital-transformation"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  IT & Digital Transformation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/risk-management"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Risk Management
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="hover:text-primary transition-all duration-300"
+                  href="#"
+                  className="hover:text-primary-hover transition-all"
                 >
                   Explore All Services
                 </Link>
               </li>
             </ul>
           </div>
-
-          {/* Industries */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Industries</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>
-                <Link
-                  href="/industries/technology"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Technology
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/industries/finance"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Finance
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/industries/healthcare"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Healthcare
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/industries/retail"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Retail
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/industries/manufacturing"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Manufacturing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/industries/government"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Government & Public Sector
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/*  */}
 
           {/* Company */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Company</h3>
             <ul className="space-y-2 text-gray-600">
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/team"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Our Team
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/insights"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Insights
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/case-studies"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  Blog/Insights
-                </Link>
-              </li>
+              {["About Us", "Our Team", "Insights", "Blog/Insights"].map(
+                (item, index) => (
+                  <li key={index}>
+                    <Link
+                      href="#"
+                      className="hover:text-primary-hover transition-all"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -184,26 +70,26 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-3 text-gray-600">
               <li className="flex items-center space-x-2">
-                <FiPhone className="text-primary" />
+                <FiPhone className="text-primary-hover" />
                 <Link
                   href="tel:+15551234567"
-                  className="hover:text-primary transition-all duration-300"
+                  className="hover:text-primary-hover"
                 >
                   +1 (555) 123-4567
                 </Link>
               </li>
               <li className="flex items-center space-x-2">
-                <FiMapPin className="text-primary" />
+                <FiMapPin className="text-primary-hover" />
                 <Link
                   href="https://maps.google.com/?q=123 Business Ave, Suite 500, New York, NY 10001, USA"
                   target="_blank"
-                  className="hover:text-primary transition-all duration-300"
+                  className="hover:text-primary-hover-hover-hover"
                 >
                   123 Business Ave, Suite 500, New York, NY 10001, USA
                 </Link>
               </li>
               <li className="flex items-center space-x-2">
-                <FiClock className="text-primary" />
+                <FiClock className="text-primary-hover" />
                 <span>Mon-Fri: 9 AM - 6 PM</span>
               </li>
             </ul>
@@ -211,74 +97,50 @@ export default function Footer() {
             {/* Social Media */}
             <h3 className="font-semibold text-lg mt-6 mb-3">Follow Us</h3>
             <div className="flex space-x-4">
-              <Link
-                href="https://facebook.com"
-                target="_blank"
-                className="text-primary text-xl hover:scale-110 transition-all duration-300"
-              >
-                <FaFacebookF />
-              </Link>
-              <Link
-                href="https://instagram.com"
-                target="_blank"
-                className="text-primary text-xl hover:scale-110 transition-all duration-300"
-              >
-                <FaInstagram />
-              </Link>
-              <Link
-                href="https://linkedin.com"
-                target="_blank"
-                className="text-primary text-xl hover:scale-110 transition-all duration-300"
-              >
-                <FaLinkedinIn />
-              </Link>
-              <Link
-                href="https://tiktok.com"
-                target="_blank"
-                className="text-primary text-xl hover:scale-110 transition-all duration-300"
-              >
-                <FaTiktok />
-              </Link>
+              {[FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok].map(
+                (Icon, index) => (
+                  <Link
+                    key={index}
+                    href="#"
+                    className="text-primary-hover text-xl hover:scale-110 transition-all"
+                  >
+                    <Icon />
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </div>
 
-        {/* Newsletter */}
+        {/* Newsletter Subscription */}
         <div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
           <div className="md:w-2/3">
             <input
               type="email"
               placeholder="Subscribe to Our Newsletter"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-focus"
             />
           </div>
-          <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-hover transition-all duration-300">
+          <button className="bg-primary text-white-text px-6 py-3 rounded-lg hover:bg-primary-hover transition-all">
             Subscribe
           </button>
         </div>
 
         {/* Copyright & Legal */}
-        <div className="mt-8 border-t pt-6 flex flex-col md:flex-row md:justify-between text-gray-500 text-sm">
+        <div className="mt-8 border-t pt-6 flex flex-col md:flex-row md:justify-between text-text text-sm">
           <p>© 2024 Consulting Firm. All rights reserved.</p>
           <div className="flex space-x-6">
-            <Link
-              href="/privacy-policy"
-              className="hover:text-primary transition-all duration-300"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms-conditions"
-              className="hover:text-primary transition-all duration-300"
-            >
-              Terms & Conditions
-            </Link>
-            <Link
-              href="/cookie-policy"
-              className="hover:text-primary transition-all duration-300"
-            >
-              Cookie Policy
-            </Link>
+            {["Privacy Policy", "Terms & Conditions", "Cookie Policy"].map(
+              (item, index) => (
+                <Link
+                  key={index}
+                  href="#"
+                  className="hover:text-primary-hover transition-all"
+                >
+                  {item}
+                </Link>
+              )
+            )}
           </div>
         </div>
       </div>
