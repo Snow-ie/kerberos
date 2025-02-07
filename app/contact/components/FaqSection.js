@@ -29,14 +29,14 @@ const FAQSection = () => {
             className="border border-gray-200 rounded-lg shadow-sm"
           >
             <button
-              className="flex justify-between items-center w-full p-5 text-gray-900 font-medium hover:bg-gray-100 transition-all"
+              className="flex justify-between items-center w-full p-5 text-gray-900 font-medium hover:bg-white-hover transition-all"
               onClick={() => toggleFAQ(index)}
             >
               <span className="text-lg">{faq.question}</span>
               {openIndex === index ? (
-                <ChevronDown className="w-5 h-5 text-green-600" />
+                <ChevronDown className="w-5 h-5 text-primary" />
               ) : (
-                <Plus className="w-5 h-5 text-green-600" />
+                <Plus className="w-5 h-5 text-primary" />
               )}
             </button>
             {openIndex === index && (

@@ -60,7 +60,7 @@ const ContactSupport = () => {
                 type="email"
                 placeholder="example@company.com"
                 {...register("email")}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-green-200"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-primary-focus"
               />
               {errors.email && (
                 <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -72,7 +72,7 @@ const ContactSupport = () => {
                 type="tel"
                 placeholder="+11 000 000 000"
                 {...register("phone")}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-green-200"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-primary-focus"
               />
               {errors.phone && (
                 <p className="text-red-500 text-sm">{errors.phone.message}</p>
@@ -83,7 +83,7 @@ const ContactSupport = () => {
               <textarea
                 placeholder="Leave us a Message"
                 {...register("message")}
-                className="w-full p-3 border border-gray-300 rounded-lg h-32 focus:ring focus:ring-green-200"
+                className="w-full p-3 border border-gray-300 rounded-lg h-32 focus:ring focus:ring-primary-focus"
               ></textarea>
               {errors.message && (
                 <p className="text-red-500 text-sm">{errors.message.message}</p>
@@ -92,7 +92,7 @@ const ContactSupport = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition disabled:bg-gray-400"
+              className="w-full bg-primary text-white-text p-3 rounded-lg hover:bg-primary-hover transition disabled:bg-gray-400"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
@@ -115,7 +115,7 @@ const ContactSupport = () => {
             <p>Chat to our staff 24/7 for instant support</p>
             <a
               href="#"
-              className="text-green-600 font-semibold hover:text-green-800"
+              className="text-primary font-semibold hover:text-primary-hover"
             >
               Start Live Chat
             </a>
@@ -123,8 +123,7 @@ const ContactSupport = () => {
           <div>
             <h3 className="font-semibold text-lg text-gray-800">Call Us</h3>
             <p>Monday - Friday, 9:00 AM - 6:00 PM</p>
-            <p className="font-semibold text-green-600">+44 161 987 6543</p>
-            <p className="font-semibold text-green-600">+44 161 987 6543</p>
+            <p className="font-semibold text-primary">+44 161 987 6543</p>
           </div>
           <div>
             <h3 className="font-semibold text-lg text-gray-800">
@@ -133,17 +132,15 @@ const ContactSupport = () => {
             <p>Email us & we will get back to you within 24 hours</p>
             <a
               href="mailto:support@apexadvisory.com"
-              className="text-green-600 font-semibold hover:text-green-800"
+              className="text-primary font-semibold hover:text-primary-hover"
             >
               support@apexadvisory.com
             </a>
           </div>
           <div>
-            <h3 className="font-semibold text-lg text-gray-800">
-              Abuja, Nigeria
-            </h3>
+            <h3 className="font-semibold text-lg text-text">Abuja, Nigeria</h3>
             <p>Visit our office Monday - Friday, 9:00 AM - 5:00 PM</p>
-            <p className="font-semibold text-green-600">
+            <p className="font-semibold text-primary">
               <a href="#">
                 4 Pakali Close, Off Aminu Kano Crescent, Wuse 2, Abuja, Nigeria
               </a>
