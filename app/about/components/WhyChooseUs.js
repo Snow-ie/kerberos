@@ -13,14 +13,15 @@ const WhyChooseUs = () => {
             client-focused strategies to drive growth and transformation.
           </p>
           <div className="mt-6 w-full h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
-            <Image
-              src="/image/whyUs.svg"
-              alt="Business Growth"
-              width={500}
-              height={300}
-              className="object-cover w-full h-full"
-              priority
-            />
+            <div className="mt-6 w-full h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
+              <Image
+                src="/image/whyUs.svg"
+                alt="Business Growth"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
 
