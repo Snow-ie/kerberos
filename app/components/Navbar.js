@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white text-text fixed top-0 left-0 w-full z-50">
-      <div className="container mx-auto p-4">
+      <div className="max-w-9xl mx-auto p-4">
         <div className="flex justify-between items-center">
           {/* Logo Section */}
           <div className="flex items-center">

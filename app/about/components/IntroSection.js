@@ -1,7 +1,7 @@
 const IntroSection = () => {
   return (
     <section className="pt-24 pb-10 bg-white">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-y-6 md:gap-12 px-4 sm:px-6">
+      <div className="max-w-9xl mx-auto flex flex-col md:flex-row items-center gap-y-6 md:gap-12 px-4 sm:px-6">
         {/* Left Section - Heading */}
         <div className="text-3xl sm:text-4xl font-bold text-text leading-tight text-center md:text-left md:w-1/2">
           Driving <span className="text-secondary">Innovative</span> Solutions
@@ -23,9 +23,6 @@ const IntroSection = () => {
             business strategy, digital transformation, cybersecurity, and energy
             consulting, we are committed to fostering industry innovation and
             empowering our clients to achieve long-term success.
-            <a href="#" className="text-green-600 italic hover:underline ml-1">
-              Read more
-            </a>
           </p>
         </div>
       </div>
