@@ -15,12 +15,12 @@ const LeadershipTeam = () => {
       </div>
 
       {/* Leadership Team Members */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
+      <div className="mt-10 flex flex-wrap w-auto mx-auto justify-center items-center gap-10">
         {/* Leader 1 */}
         <div className="flex flex-col items-center">
           <div className="w-[180px] h-[240px] bg-gray-300 rounded-lg overflow-hidden">
             <Image
-              src=""
+              src="/image/leaderShip2.svg"
               alt="Leadership Member 1"
               width={180}
               height={240}
@@ -39,7 +39,7 @@ const LeadershipTeam = () => {
         <div className="flex flex-col items-center">
           <div className="w-[180px] h-[240px] bg-gray-300 rounded-lg overflow-hidden">
             <Image
-              src=""
+              src="/image/leaderShip1.svg"
               alt="Leadership Member 2"
               width={180}
               height={240}

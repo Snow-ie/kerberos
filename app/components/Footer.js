@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-50 text-gray-800 py-12 border-t">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-9xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Services */}
           <div>

@@ -19,7 +19,7 @@ const slides = [
     title: "KERBEROS TECHNOLOGY",
     description:
       "Our mission is to be the catalyst for global transformation by developing and delivering world-leading innovative industries, foster innovation, and drive sustainable progress.",
-    image: "/image/techImg.svg",
+    image: "/image/techImage.svg",
     icon: <FaLightbulb className="text-yellow-500 text-6xl animate-bounce" />,
   },
 ];
