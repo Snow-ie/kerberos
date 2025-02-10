@@ -3,7 +3,10 @@ const IntroSection = () => {
     <section className="pt-24 pb-10 bg-white">
       <div className="max-w-9xl mx-auto flex flex-col md:flex-row items-center gap-y-6 md:gap-12 px-4 sm:px-6">
         {/* Left Section - Heading */}
-        <div className="text-3xl sm:text-4xl font-bold text-text leading-tight text-center md:text-left md:w-1/2">
+        <div
+          className="text-3xl sm:text-4xl font-bold text-text leading-tight text-center md:text-left 
+  w-full max-w-md md:max-w-lg lg:max-w-xl"
+        >
           Driving <span className="text-secondary">Innovative</span> Solutions
           with <span className="text-secondary">Lasting</span> Impact
         </div>

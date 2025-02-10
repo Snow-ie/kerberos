@@ -2,7 +2,7 @@ import React from "react";
 import IntroSection from "./components/IntroSection";
 import BusinessHistory from "./components/BusinessHistory";
 import MissionVision from "./components/MissionVision";
-import LeadershipTeam from "./LeadershipTeam";
+import LeadershipTeam from "./components/LeadershipTeam";
 import WhyChooseUs from "./components/WhyChooseUs";
 
 const AboutUS = () => {

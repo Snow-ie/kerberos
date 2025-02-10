@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-50 text-gray-800 py-12 border-t">
-      <div className="max-w-9xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Services */}
           <div>
@@ -128,7 +128,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Subscription */}
-        <div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-start gap-3 w-full max-w-lg">
+        <div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-center gap-3 w-full max-w-lg mx-auto">
           <div className="w-full md:w-auto flex-grow">
             <input
               type="email"
@@ -154,9 +154,9 @@ export default function Footer() {
         </div>
 
         {/* Copyright & Legal */}
-        <div className="mt-8 border-t pt-6 flex flex-col md:flex-row md:justify-between text-text text-sm">
+        <div className="mt-8 border-t pt-6 flex flex-col md:flex-row md:items-center md:justify-center text-text text-sm text-center md:gap-6">
           <p>© 2024 Consulting Firm. All rights reserved.</p>
-          <div className="flex space-x-6">
+          <div className="flex space-x-6 md:justify-center">
             {["Privacy Policy", "Terms & Conditions", "Cookie Policy"].map(
               (item, index) => (
                 <Link

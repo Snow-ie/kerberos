@@ -1,14 +1,14 @@
 const BusinessHistory = () => {
   return (
     <section
-      className="relative w-full flex items-center justify-center bg-cover bg-center h-ayto sm:h-auto md:h-[500px] lg:h-[600px] px-6"
+      className="relative w-full flex items-center justify-center bg-cover bg-center h-auto sm:h-auto md:h-[500px] lg:h-[600px] px-6"
       style={{ backgroundImage: "url('/image/aboutBusiness.svg')" }}
     >
       {/* Overlay for better contrast */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white-text max-w-2xl py-8">
+      <div className="relative z-10 text-center text-white-text max-w-5xl py-8">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Our Business Journey
         </h2>

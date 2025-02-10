@@ -4,7 +4,7 @@ import { FaLightbulb } from "react-icons/fa";
 const WhyChooseUs = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6 border border-gray-300 rounded-lg p-6 shadow-sm">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6  rounded-lg p-6 shadow-sm">
         {/* Left Section - Title, Text, and Image */}
         <div>
           <h2 className="text-3xl font-bold text-secondary">Why Choose Us</h2>
