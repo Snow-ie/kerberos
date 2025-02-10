@@ -12,7 +12,7 @@ const insightsData = [
     title: "The Role of Digital Transformation in Business Growth",
     description:
       "How businesses can leverage technology, automation, and AI-driven solutions to boost productivity and profitability.",
-    imageUrl: "/image/inSight3.svg",
+    imageUrl: "/image/inSights.svg",
     link: "#",
   },
   {
