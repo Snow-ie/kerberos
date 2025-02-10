@@ -15,19 +15,19 @@ const LeadershipTeam = () => {
       </div>
 
       {/* Leadership Team Members */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 justify-center items-center">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
         {/* Leader 1 */}
         <div className="flex flex-col items-center">
-          <div className="w-[200px] h-[260px] bg-gray-300 rounded-lg overflow-hidden">
+          <div className="w-[180px] h-[240px] bg-gray-300 rounded-lg overflow-hidden">
             <Image
               src=""
               alt="Leadership Member 1"
-              width={200}
-              height={260}
+              width={180}
+              height={240}
               className="object-cover w-full h-full"
             />
           </div>
-          <h3 className="mt-4 text-lg font-semibold text-text">
+          <h3 className="mt-3 text-lg font-semibold text-text">
             Kizito Ofornagoro
           </h3>
           <p className="text-sm text-text-hover italic">
@@ -37,16 +37,16 @@ const LeadershipTeam = () => {
 
         {/* Leader 2 */}
         <div className="flex flex-col items-center">
-          <div className="w-[200px] h-[260px] bg-gray-300 rounded-lg overflow-hidden">
+          <div className="w-[180px] h-[240px] bg-gray-300 rounded-lg overflow-hidden">
             <Image
               src=""
               alt="Leadership Member 2"
-              width={200}
-              height={260}
+              width={180}
+              height={240}
               className="object-cover w-full h-full"
             />
           </div>
-          <h3 className="mt-4 text-lg font-semibold text-text">
+          <h3 className="mt-3 text-lg font-semibold text-text">
             Haruna Madisca
           </h3>
           <p className="text-sm text-text-hover italic">

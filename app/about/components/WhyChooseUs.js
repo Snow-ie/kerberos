@@ -15,7 +15,7 @@ const WhyChooseUs = () => {
           <div className="mt-6 w-full h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
             <div className="mt-6 w-full h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/image/whyUs.svg"
+                src="/image/whyUS.svg"
                 alt="Business Growth"
                 fill
                 className="object-cover"

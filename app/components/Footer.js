@@ -12,7 +12,7 @@ import { FiPhone, FiMapPin, FiClock } from "react-icons/fi";
 export default function Footer() {
   return (
     <footer className="bg-gray-50 text-gray-800 py-12 border-t">
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+      <div className="max-w-9xl mx-auto px-6 ">
         <div className="grid grid-cols-1 md:grid-cols-3  gap-10">
           {/* Services */}
           <div>
