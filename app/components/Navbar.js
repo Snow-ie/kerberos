@@ -90,14 +90,10 @@ export default function Navbar() {
           {/* Navigation Links */}
           <div
             ref={menuRef}
-            className={`absolute md:relative top-16 left-0 md:top-0 md:left-auto w-full md:w-auto 
-  bg-white md:bg-transparent bg-opacity-90 backdrop-blur-lg
-  md:flex md:items-center md:space-x-6 p-5 md:p-0 transition-all duration-300 ease-in-out transform 
-  ${
-    isMenuOpen
-      ? "opacity-100 scale-100 translate-y-0"
-      : "opacity-0 scale-95 -translate-y-4 hidden md:block"
-  }`}
+            className={`absolute md:relative top-16 left-0 md:top-0 md:left-auto w-full md:w-auto bg-opacity-90 backdrop-blur-md bg-white
+             md:flex md:items-center md:space-x-6 p-5 md:p-0 transition-all ${
+               isMenuOpen ? "block" : "hidden"
+             }`}
           >
             <Link
               href="/"
