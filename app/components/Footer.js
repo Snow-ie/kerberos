@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import {
   FaFacebookF,
@@ -10,10 +11,25 @@ import {
 import { FiPhone, FiMapPin, FiClock } from "react-icons/fi";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isActive, setIsActive] = useState(false);
+
+  const handleInputChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubscribe = () => {
+    if (email.trim() !== "") {
+      setIsActive(true);
+      setTimeout(() => setIsActive(false), 200); // Reset after 200ms
+      alert(`Subscribed with: ${email}`);
+    }
+  };
+
   return (
     <footer className="bg-gray-50 text-gray-800 py-12 border-t">
-      <div className="max-w-9xl mx-auto px-6 ">
-        <div className="grid grid-cols-1 md:grid-cols-3  gap-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Services */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Our Services</h3>
@@ -44,7 +60,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          {/*  */}
 
           {/* Company */}
           <div>
@@ -83,7 +98,7 @@ export default function Footer() {
                 <Link
                   href="https://maps.google.com/?q=123 Business Ave, Suite 500, New York, NY 10001, USA"
                   target="_blank"
-                  className="hover:text-primary-hover-hover-hover"
+                  className="hover:text-primary-hover"
                 >
                   123 Business Ave, Suite 500, New York, NY 10001, USA
                 </Link>
@@ -113,15 +128,27 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Subscription */}
-        <div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
-          <div className="md:w-2/3">
+        <div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-start gap-3 w-full max-w-lg">
+          <div className="w-full md:w-auto flex-grow">
             <input
               type="email"
               placeholder="Subscribe to Our Newsletter"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-focus"
+              value={email}
+              onChange={handleInputChange}
+              className="w-full md:w-[350px] lg:w-[400px] p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-focus"
             />
           </div>
-          <button className="bg-primary text-white-text px-6 py-3 rounded-lg hover:bg-primary-hover transition-all">
+          <button
+            onClick={handleSubscribe}
+            disabled={!email.trim()}
+            className={`px-6 py-3 rounded-lg transition-all ${
+              email.trim()
+                ? `bg-primary text-white-text hover:bg-primary-hover ${
+                    isActive ? "scale-95" : "scale-100"
+                  }`
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            }`}
+          >
             Subscribe
           </button>
         </div>

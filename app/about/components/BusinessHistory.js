@@ -12,7 +12,7 @@ const BusinessHistory = () => {
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Our Business Journey
         </h2>
-        <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+        <p className="mt-4 text-base sm:text-lg md:text-xl  leading-relaxed">
           Founded with a vision to transform the consulting landscape, we began
           our journey in 2024 with an unwavering commitment to delivering
           strategic business solutions. Over the years, we have built a

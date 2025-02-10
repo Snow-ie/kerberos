@@ -12,6 +12,7 @@ import { ChevronDown, ChevronUp, AlignJustify, XCircle } from "lucide-react";
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const menuRef = useRef(null);
 
@@ -30,20 +31,37 @@ export default function Navbar() {
     };
   }, []);
 
+  // Handle Navbar Scroll Effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="bg-white text-text fixed top-0 left-0 w-full z-50">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-opacity-80 backdrop-blur-md bg-transparent shadow-lg"
+          : "bg-white"
+      }`}
+    >
       <div className="max-w-9xl mx-auto p-6">
         <div className="flex justify-between items-center">
           {/* Logo Section */}
           <div className="flex items-center">
-            {" "}
             <div className="relative w-8 h-8">
               <Image
                 src={mainLogo}
                 alt="Kerberos Logo"
                 fill
-                loading="eager" // ✅ Use eager loading instead of priority
-                className="object-contain"
+                loading="eager"
+                className="object-contain transition-all duration-300"
               />
             </div>
             <div className="relative w-24 h-6">
@@ -51,13 +69,13 @@ export default function Navbar() {
                 src={textLogo}
                 alt="Kerberos Text Logo"
                 fill
-                loading="eager" // ✅ Use eager loading instead of priority
-                className="object-contain"
+                loading="eager"
+                className="object-contain transition-all duration-300"
               />
             </div>
           </div>
 
-          {/* Styled Mobile Menu Button */}
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-3 bg-primary text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:bg-primary-hover"
             onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -98,25 +116,18 @@ export default function Navbar() {
               >
                 Services{" "}
                 {isDropdownOpen ? (
-                  <ChevronUp className="ml-2 text-primary text-lg" />
+                  <ChevronUp className="ml-2 text-lg" />
                 ) : (
-                  <ChevronDown className="ml-2 text-primary text-lg" />
+                  <ChevronDown className="ml-2 text-lg" />
                 )}
               </button>
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div
-                  className="absolute bg-white text-text shadow-md rounded mt-2 w-40 left-0 bg-no-repeat bg-cover z-50"
-                  style={{ backgroundImage: "url('/your-image-path.jpg')" }}
-                >
+                <div className="absolute bg-white text-text shadow-md rounded mt-2 w-40 left-0 z-50">
                   <Link
                     href="/services/energy"
-                    className={`block px-4 py-2 ${
-                      pathname === "/services/energy"
-                        ? "bg-primary-active text-white"
-                        : ""
-                    } hover:bg-white-hover focus:bg-white-focus`}
+                    className="block px-4 py-2 hover:bg-gray-100"
                     onClick={() => {
                       setIsDropdownOpen(false);
                       setIsMenuOpen(false);
@@ -126,11 +137,7 @@ export default function Navbar() {
                   </Link>
                   <Link
                     href="/services/technology"
-                    className={`block px-4 py-2 ${
-                      pathname === "/services/technology"
-                        ? "bg-primary-active text-white"
-                        : ""
-                    } hover:bg-white-hover focus:bg-white-focus`}
+                    className="block px-4 py-2 hover:bg-gray-100"
                     onClick={() => {
                       setIsDropdownOpen(false);
                       setIsMenuOpen(false);

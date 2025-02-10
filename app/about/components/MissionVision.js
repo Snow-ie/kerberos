@@ -3,12 +3,12 @@ import Image from "next/image";
 const MissionVision = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2  px-6">
         {/* Mission Section */}
         <div className="flex flex-col justify-center">
           <h2 className="text-2xl font-bold text-secondary">Our Mission</h2>
           <div className="flex items-start mt-4">
-            <div className="w-1 h-full bg-secondary mr-4"></div>
+            <div className="w-1 h-full bg-secondary mr-6"></div>
             <p className="text-text-hover leading-relaxed">
               At Kerberos Consulting Ltd., we empower global progress through
               visionary infrastructure and technology solutions. Our mission is
@@ -45,7 +45,7 @@ const MissionVision = () => {
         <div className="flex flex-col justify-center p-6">
           <h2 className="text-2xl font-bold text-secondary">Our Vision</h2>
           <div className="flex items-start mt-4">
-            <div className="w-1 h-full bg-secondary mr-4"></div>
+            <div className="w-1 h-full bg-secondary mr-6"></div>
             <p className="text-text-hover leading-relaxed">
               At Kerberos Consulting Ltd., we empower global progress through
               visionary infrastructure and technology solutions. Our mission is

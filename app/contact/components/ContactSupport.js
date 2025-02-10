@@ -34,7 +34,7 @@ const ContactSupport = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6 pt-20">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6 pt-24">
       <div className="max-w-6xl w-full bg-white rounded-lg p-8 grid grid-cols-1 md:grid-cols-2 gap-10 shadow-lg">
         {/* Contact Form */}
         <div>

@@ -14,7 +14,7 @@ export default function BusinessCTA() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Ready to Transform Your Business?
         </h2>
-        <p className="mt-3 text-base sm:text-lg md:text-xl lg:text-2xl">
+        <p className="mt-5 text-base sm:text-lg md:text-xl ">
           Partner with us for expert guidance and strategies that drive growth
           and success.
         </p>

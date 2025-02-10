@@ -6,8 +6,8 @@ const ExpertInsights = () => {
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8 text-center md:text-left">
-          <div>
+        <div className="flex flex-col md:flex-row md:justify-between items-center mb-8 text-center md:text-left md:space-x-4">
+          <div className="w-full md:w-3/4">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               Expert Insights
             </h2>
@@ -16,12 +16,14 @@ const ExpertInsights = () => {
               perspectives in consulting and business growth.
             </p>
           </div>
-          <a
-            href="#"
-            className="mt-4 md:mt-0 border border-green-700 text-green-700 px-5 py-2 rounded-lg font-medium hover:bg-green-100 transition"
-          >
-            View All
-          </a>
+          <div className="w-full md:w-auto mt-4 md:mt-0">
+            <a
+              href="#"
+              className="w-full md:w-auto block text-center border border-green-700 text-green-700 px-5 py-2 rounded-lg font-medium hover:bg-green-100 transition"
+            >
+              View All
+            </a>
+          </div>
         </div>
 
         {/* Insights Grid */}

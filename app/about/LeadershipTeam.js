@@ -8,7 +8,7 @@ const LeadershipTeam = () => {
         <h2 className="text-2xl font-bold text-text">
           Meet Our Leadership Team
         </h2>
-        <p className="text-text-hover mt-2">
+        <p className="text-text-hover mt-2 leading-relaxed">
           Led by seasoned experts, our leadership delivers innovative, tailored
           solutions that empower businesses to thrive and grow sustainably.
         </p>

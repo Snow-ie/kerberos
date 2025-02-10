@@ -45,7 +45,7 @@ const HeroCarousel = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="relative h-[85vh] md:h-screen flex flex-col items-center justify-center md:items-start text-center md:text-left px-6 md:px-20"
+            className="relative h-[85vh] md:h-screen flex flex-col items-center justify-center md:items-start text-center md:text-left px-6"
           >
             {/* Background Image */}
             <div className="absolute inset-0 w-full h-full">
