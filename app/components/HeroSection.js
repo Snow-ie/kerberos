@@ -4,8 +4,8 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
-import slides from "@/data/slides";
 import Link from "next/link";
+import slides from "@/data/slides";
 
 // Responsive settings for different devices
 const responsive = {
@@ -69,11 +69,14 @@ const HeroCarousel = () => {
               <p className="mt-4 text-base md:text-lg leading-relaxed">
                 {slide.description}
               </p>
-              <Link href="/service" passHref>
-                <button className="mt-6 px-6 py-3 bg-secondary text-white-text  rounded-lg shadow-lg hover:bg-secondary-hover transition">
-                  SERVICES
-                </button>
-              </Link>
+              {/* Show button only if `link` and `buttonText` exist */}
+              {slide.link && slide.buttonText && (
+                <Link href={slide.link} passHref>
+                  <button className="mt-6 px-6 py-3 bg-secondary text-white-text rounded-lg shadow-lg hover:bg-secondary-hover transition">
+                    {slide.buttonText}
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         ))}

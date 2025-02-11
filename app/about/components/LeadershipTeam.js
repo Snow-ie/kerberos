@@ -15,7 +15,7 @@ const LeadershipTeam = () => {
       </div>
 
       {/* Leadership Team Members */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 w-full mx-auto justify-center">
+      <div className="mt-10 flex md:flex-row flex-col justify-center gap-16 sm:gap-12">
         {/* Leader 1 */}
         <div className="flex flex-col items-center">
           <div className="w-[180px] h-[240px] bg-gray-300 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-all">
