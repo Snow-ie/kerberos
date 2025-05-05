@@ -4,7 +4,6 @@ const LeadershipTeam = () => {
   return (
     <section className="py-16 bg-white text-center">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section Heading */}
         <h2 className="text-2xl sm:text-3xl font-bold text-text">
           Meet Our Leadership Team
         </h2>
@@ -14,9 +13,7 @@ const LeadershipTeam = () => {
         </p>
       </div>
 
-      {/* Leadership Team Members */}
       <div className="mt-10 flex md:flex-row flex-col justify-center gap-16 sm:gap-12">
-        {/* Leader 1 */}
         <div className="flex flex-col items-center">
           <div className="w-[180px] h-[240px] bg-gray-300 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-all">
             <Image
@@ -30,12 +27,9 @@ const LeadershipTeam = () => {
           <h3 className="mt-3 text-lg font-semibold text-text">
             Kizito Ofornagoro
           </h3>
-          <p className="text-sm text-text-hover italic">
-            CEO, Kerberos Consulting Ltd
-          </p>
+          <p className="text-sm text-text-hover italic">CEO, Kerberos</p>
         </div>
 
-        {/* Leader 2 */}
         <div className="flex flex-col items-center">
           <div className="w-[180px] h-[240px] bg-gray-300 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-all">
             <Image
@@ -49,13 +43,10 @@ const LeadershipTeam = () => {
           <h3 className="mt-3 text-lg font-semibold text-text">
             Haruna Madisca
           </h3>
-          <p className="text-sm text-text-hover italic">
-            MD, Kerberos Consulting Ltd
-          </p>
+          <p className="text-sm text-text-hover italic">MD, Kerberos</p>
         </div>
       </div>
 
-      {/* Meet Our Team Button */}
       <div className="mt-8 flex justify-center">
         <a
           href="#"

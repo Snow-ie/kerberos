@@ -7,3 +7,11 @@ body {
   /* @apply font-sans; */
   width: 100%;
 }
+
+.services {
+  display: none;
+}
+
+.services-container:hover .services {
+  display: block;
+}

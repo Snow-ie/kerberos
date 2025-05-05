@@ -4,6 +4,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { motion } from "framer-motion";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaComments,
+} from "react-icons/fa";
 
 const validationSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -34,51 +41,74 @@ const ContactSupport = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6 pt-24">
-      <div className="max-w-6xl w-full bg-white rounded-lg p-8 grid grid-cols-1 md:grid-cols-2 gap-10 shadow-lg">
+    <motion.div
+      className="min-h-screen flex items-center justify-center bg-gray-100 p-6 pt-24"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.div
+        className="container w-full bg-white rounded-lg p-8 grid grid-cols-1 md:grid-cols-2 gap-10 shadow-lg"
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         {/* Contact Form */}
-        <div>
+        <motion.div
+          initial={{ x: -30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-2xl font-bold mb-6 text-gray-900">
             Get in Touch with Us
           </h2>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div>
-              <label className="block text-gray-700">Name *</label>
-              <input
-                type="text"
-                placeholder="Your name"
-                {...register("name")}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-green-200"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm">{errors.name.message}</p>
-              )}
-            </div>
-            <div>
-              <label className="block text-gray-700">Email *</label>
-              <input
-                type="email"
-                placeholder="example@company.com"
-                {...register("email")}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-primary-focus"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm">{errors.email.message}</p>
-              )}
-            </div>
-            <div>
-              <label className="block text-gray-700">Phone Number *</label>
-              <input
-                type="tel"
-                placeholder="+11 000 000 000"
-                {...register("phone")}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-primary-focus"
-              />
-              {errors.phone && (
-                <p className="text-red-500 text-sm">{errors.phone.message}</p>
-              )}
-            </div>
-            <div>
+            {[
+              {
+                label: "Name",
+                type: "text",
+                name: "name",
+                placeholder: "Your name",
+              },
+              {
+                label: "Email",
+                type: "email",
+                name: "email",
+                placeholder: "example@company.com",
+              },
+              {
+                label: "Phone Number",
+                type: "tel",
+                name: "phone",
+                placeholder: "+11 000 000 000",
+              },
+            ].map((field, index) => (
+              <motion.div
+                key={field.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
+              >
+                <label className="block text-gray-700">{field.label} *</label>
+                <input
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  {...register(field.name)}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-primary-focus"
+                />
+                {errors[field.name] && (
+                  <p className="text-red-500 text-sm">
+                    {errors[field.name].message}
+                  </p>
+                )}
+              </motion.div>
+            ))}
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
               <label className="block text-gray-700">Message *</label>
               <textarea
                 placeholder="Leave us a Message"
@@ -88,19 +118,27 @@ const ContactSupport = () => {
               {errors.message && (
                 <p className="text-red-500 text-sm">{errors.message.message}</p>
               )}
-            </div>
-            <button
+            </motion.div>
+
+            <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-primary text-white-text p-3 rounded-lg hover:bg-primary-hover transition disabled:bg-gray-400"
+              className="w-full bg-primary text-white p-3 rounded-lg hover:bg-primary-hover transition disabled:bg-gray-400"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {isSubmitting ? "Sending..." : "Send Message"}
-            </button>
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
 
         {/* Contact Information */}
-        <div className="space-y-6">
+        <motion.div
+          className="space-y-6"
+          initial={{ x: 30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-2xl font-bold text-gray-900">
             Contact & Support
           </h2>
@@ -108,47 +146,67 @@ const ContactSupport = () => {
             We're here to assist you. Whether it's inquiries, consultations, or
             support, don't hesitate to reach out.
           </p>
-          <div>
-            <h3 className="font-semibold text-lg text-gray-800">
-              Chat to Support
-            </h3>
-            <p>Chat to our staff 24/7 for instant support</p>
-            <a
-              href="#"
-              className="text-primary font-semibold hover:text-primary-hover"
+
+          {[
+            {
+              icon: FaComments,
+              title: "Chat to Support",
+              description: "Chat to our staff 24/7 for instant support",
+              link: "#",
+              linkText: "Start Live Chat",
+            },
+            {
+              icon: FaPhone,
+              title: "Call Us",
+              description: "Monday - Friday, 9:00 AM - 6:00 PM",
+              contact: "+44 161 987 6543",
+            },
+            {
+              icon: FaEnvelope,
+              title: "Email Support",
+              description: "Email us & we will get back to you within 24 hours",
+              link: "mailto:support@apexadvisory.com",
+              linkText: "support@apexadvisory.com",
+            },
+            {
+              icon: FaMapMarkerAlt,
+              title: "Abuja, Nigeria",
+              description:
+                "Visit our office Monday - Friday, 9:00 AM - 5:00 PM",
+              contact:
+                "4 Pakali Close, Off Aminu Kano Crescent, Wuse 2, Abuja, Nigeria",
+              link: "#",
+            },
+          ].map((info, index) => (
+            <motion.div
+              key={info.title}
+              className="flex items-center space-x-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 + 0.6, duration: 0.5 }}
             >
-              Start Live Chat
-            </a>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg text-gray-800">Call Us</h3>
-            <p>Monday - Friday, 9:00 AM - 6:00 PM</p>
-            <p className="font-semibold text-primary">+44 161 987 6543</p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg text-gray-800">
-              Email Support
-            </h3>
-            <p>Email us & we will get back to you within 24 hours</p>
-            <a
-              href="mailto:support@apexadvisory.com"
-              className="text-primary font-semibold hover:text-primary-hover"
-            >
-              support@apexadvisory.com
-            </a>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg text-text">Abuja, Nigeria</h3>
-            <p>Visit our office Monday - Friday, 9:00 AM - 5:00 PM</p>
-            <p className="font-semibold text-primary">
-              <a href="#">
-                4 Pakali Close, Off Aminu Kano Crescent, Wuse 2, Abuja, Nigeria
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+              <info.icon className="text-primary text-xl" />
+              <div>
+                <h3 className="font-semibold text-lg text-gray-800">
+                  {info.title}
+                </h3>
+                <p>{info.description}</p>
+                {info.link ? (
+                  <a
+                    href={info.link}
+                    className="text-primary font-semibold hover:text-primary-hover"
+                  >
+                    {info.linkText || info.contact}
+                  </a>
+                ) : (
+                  <p className="font-semibold text-primary">{info.contact}</p>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -12,11 +12,13 @@ export default function BusinessCTA() {
       {/* Content */}
       <div className="relative z-10 text-center text-white-text max-w-2xl">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-          Ready to Transform Your Business?
+          Let's Build the Future Together
         </h2>
         <p className="mt-5 text-base sm:text-lg md:text-xl ">
-          Partner with us for expert guidance and strategies that drive growth
-          and success.
+          At Kerberos, we believe in transforming businesses, industries, and
+          communities through expert-driven solutions. Whether you need
+          strategic consulting, cutting-edge technology, or energy expertise, we
+          are here to help.
         </p>
         <Link href="/contact" passHref>
           <button className="mt-5 px-6 py-3 md:px-8 md:py-4 border border-white text-white-text rounded-md sm:rounded-lg text-sm sm:text-base md:text-lg lg:text-xl hover:bg-white hover:text-black transition">

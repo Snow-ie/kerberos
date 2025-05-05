@@ -10,15 +10,14 @@ const MissionVision = () => {
           <div className="flex items-start mt-4">
             <div className="w-1 h-full bg-secondary mr-6"></div>
             <p className="text-text-hover leading-relaxed">
-              At Kerberos Consulting Ltd., we empower global progress through
-              visionary infrastructure and technology solutions. Our mission is
-              to facilitate transformative projects that advance industries and
+              At Kerberos, we empower global progress through visionary
+              infrastructure and technology solutions. Our mission is to
+              facilitate transformative projects that advance industries and
               enhance communities.
             </p>
           </div>
         </div>
 
-        {/* Mission Image - Fully Responsive */}
         <div className="relative w-full h-auto">
           <Image
             src="/image/missionImg.svg"
@@ -30,7 +29,6 @@ const MissionVision = () => {
           />
         </div>
 
-        {/* Vision Image - Fully Responsive */}
         <div className="relative w-full h-auto">
           <Image
             src="/image/visionImg.svg"
@@ -47,10 +45,11 @@ const MissionVision = () => {
           <div className="flex items-start mt-4">
             <div className="w-1 h-full bg-secondary mr-6"></div>
             <p className="text-text-hover leading-relaxed">
-              At Kerberos Consulting Ltd., we empower global progress through
-              visionary infrastructure and technology solutions. Our mission is
-              to facilitate transformative projects that advance industries and
-              enhance communities.
+              To be the trusted partner for businesses and industries seeking
+              strategic transformation, technological advancement, and
+              sustainable energy solutions. We aim to lead with innovation,
+              empower businesses with expertise, and champion solutions that
+              create a lasting impact.
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 const ExpertInsights = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="container mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between items-center mb-8 text-center md:text-left md:space-x-4">
           <div className="w-full md:w-3/4">
