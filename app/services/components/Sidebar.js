@@ -9,18 +9,18 @@ const NAVBAR_H = 64;
 const DRAWER_W = 256;
 
 const links = [
-  { href: "/services/consulting", label: "Introduction" },
+  // { href: "/services/consulting", label: "Introduction" },
   {
     href: "/services/consulting/consulting-info",
-    label: "Kerberos Consulting Limited.",
+    label: "Kerberos Consulting ",
   },
   {
     href: "/services/consulting/technology-info",
-    label: "Kerberos Technologies Limited.",
+    label: "Kerberos Technologies ",
   },
   {
     href: "/services/consulting/energy-info",
-    label: "Kerberos Energy Services Limited.",
+    label: "Kerberos Energy Services L",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function Sidebar() {
         key={href}
         href={href}
         className={`group relative flex items-center gap-3 rounded-md
-                    px-4 py-2 text-sm font-medium transition-colors
+                    px-3 py-2 text-sm font-medium transition-colors
                     ${
                       active
                         ? "bg-indigo-600/10 text-indigo-700"
@@ -52,23 +52,13 @@ export default function Sidebar() {
                           : "bg-gray-300 opacity-0 group-hover:opacity-50"
                       }`}
         />
-        <ChevronRight
-          className={`w-4 h-4 transition-transform
-                      ${
-                        active
-                          ? "rotate-90 text-indigo-600"
-                          : "text-gray-400 group-hover:text-gray-500"
-                      }`}
-        />
         <span className="truncate">{label}</span>
       </Link>
     );
   });
 
-  /* ---------- component ---------- */
   return (
     <>
-      {/* Arrow toggle (mobile only) */}
       <button
         aria-label="Toggle sidebar"
         onClick={() => setOpen((o) => !o)}
@@ -80,11 +70,9 @@ export default function Sidebar() {
           transform: open ? "rotate(180deg)" : "rotate(0deg)",
         }}
       >
-        {/* ChevronRight always rendered, we rotate it */}
         <ChevronRight className="w-6 h-6 text-gray-700" />
       </button>
 
-      {/* Dark overlay */}
       {open && (
         <div
           onClick={() => setOpen(false)}
@@ -95,7 +83,7 @@ export default function Sidebar() {
 
       {/* Drawer */}
       <aside
-        className={`fixed left-0 z-50 w-64
+        className={`fixed left-0 z-50 w-72
                     h-[calc(100vh-${NAVBAR_H}px)]
                     bg-white/90 backdrop-blur border-r shadow
                     transition-transform duration-300

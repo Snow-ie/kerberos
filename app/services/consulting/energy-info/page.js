@@ -1,21 +1,21 @@
 "use client";
 
 import ServiceHero from "../../components/ServiceHero";
-import NextButton from "../../components/NextButton";
 
 export default function EnergyInfo() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen pt-20">
       <ServiceHero
         src="/image/energyImg4.jpg"
         alt="Energy landscape"
-        ratio="21/9"
+        ratio="16/9"
+        sizes="(min-width: 1024px) 768px, 100vw"
       />
 
-      <main className="w-full max-w-3xl mx-auto px-4 py-12 space-y-10">
+      <main className="w-full container mx-auto px-4 py-12 space-y-10">
         <header className="space-y-2">
           <h1 className="text-3xl font-bold text-gray-900">
-            Kerberos Energy Services&nbsp;Limited.
+            Kerberos Energy Services.
           </h1>
           <p className="text-base font-medium text-indigo-600">
             Driving Sustainability &amp; Innovation in Energy
@@ -75,11 +75,6 @@ export default function EnergyInfo() {
           </p>
         </section>
       </main>
-
-      {/* CTA */}
-      <div className="mt-auto w-full max-w-3xl mx-auto px-4 pb-12 flex justify-end">
-        <NextButton href="/services/consulting" />
-      </div>
     </div>
   );
 }

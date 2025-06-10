@@ -11,20 +11,13 @@ const slides = [
     image: "/image/consultingImg4.jpg",
     title: "KERBEROS CONSULTING",
     description: "Providing innovative business solutions to drive success.",
-    link: "/services/consulting",
+    link: "/services/consulting/consulting-info",
   },
   {
     image: "/image/HeroImage3.svg",
     title: "Strategic Planning",
     description: "Helping businesses craft and execute effective strategies.",
-    link: "/services/consulting",
-  },
-  {
-    image: "/image/consultingImg1.jpg",
-    title: "Market Insights",
-    description:
-      "Delivering data-driven market research for informed decisions.",
-    link: "/services/consulting",
+    link: "/services/consulting/consulting-info",
   },
 ];
 

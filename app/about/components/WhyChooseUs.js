@@ -5,7 +5,6 @@ const WhyChooseUs = () => {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6  rounded-lg p-6 shadow-sm">
-        {/* Left Section - Title, Text, and Image */}
         <div>
           <h2 className="text-3xl font-bold text-secondary">Why Choose Us</h2>
           <p className="text-text mt-2">
@@ -25,7 +24,6 @@ const WhyChooseUs = () => {
           </div>
         </div>
 
-        {/* Right Section - List of Benefits */}
         <div className="space-y-6">
           {[
             "Industry Expertise – Backed by years of experience, we bring deep market insights and data-driven solutions.",

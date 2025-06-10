@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <ValuesSection />
+      {/* <ValuesSection />
       <AboutSection />
       <Expertise />
-      <ExpertInsights />
+      <ExpertInsights /> */}
     </div>
   );
 }

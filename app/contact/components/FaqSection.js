@@ -19,7 +19,6 @@ const FAQSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      {/* Heading */}
       <motion.h2
         className="text-3xl md:text-4xl font-semibold text-center text-gray-900"
         initial={{ opacity: 0, y: -10 }}
@@ -37,7 +36,6 @@ const FAQSection = () => {
         Answers to common inquiries about our services.
       </motion.p>
 
-      {/* FAQ Grid */}
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10"
         initial="hidden"
@@ -79,7 +77,6 @@ const FAQSection = () => {
               </motion.div>
             </button>
 
-            {/* Expanding Answer with Animation */}
             <AnimatePresence>
               {openIndex === index && (
                 <motion.div

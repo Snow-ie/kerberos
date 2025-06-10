@@ -33,12 +33,12 @@ const Expertise = () => {
               {item.title}
             </h3>
             <p className="mt-2 text-gray-600">{item.description}</p>
-            <a
+            {/* <a
               href="#"
               className="mt-4 text-green-600 font-medium hover:underline"
             >
               {item.linkText}
-            </a>
+            </a> */}
           </div>
         ))}
       </div>

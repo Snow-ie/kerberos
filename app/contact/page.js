@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div>
       <ContactSupport />
-      <MapsSection />
+      {/* <MapsSection /> */}
       <FAQSection />
     </div>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import ServiceHero from "@/app/services/components/ServiceHero";
-import NextButton from "@/app/services/components/NextButton";
 
 export default function ConsultingIntro() {
   return (
@@ -26,25 +25,24 @@ export default function ConsultingIntro() {
 
         <p className="text-gray-700 leading-relaxed">
           At&nbsp;Kerberos, we empower businesses to grow, optimise operations,
-          and navigate complex challenges with world‑class expertise. Our
+          and navigate complex challenges with world-class expertise. Our
           diversified services—strategic consulting, technological solutions,
-          and energy advisory—keep clients ahead in an ever‑evolving landscape.
+          and energy advisory—keep clients ahead in an ever-evolving landscape.
         </p>
 
-        {/* ── bullet list added here */}
         <section className="space-y-6">
           <h2 className="text-xl font-semibold text-gray-900">Our Expertise</h2>
           <ul className="list-disc list-inside space-y-4 text-gray-700">
             <li>
-              <strong>Business Strategy &amp; Growth —</strong> Market
+              <strong>Business Strategy &amp; Growth —</strong> Market
               intelligence, competitive positioning, and roadmap execution.
             </li>
             <li>
-              <strong>Technology Transformation —</strong> Digital acceleration,
+              <strong>Technology Transformation —</strong> Digital acceleration,
               systems integration, and bespoke software delivery.
             </li>
             <li>
-              <strong>Energy &amp; Sustainability —</strong> Advisory services
+              <strong>Energy &amp; Sustainability —</strong> Advisory services
               driving efficiency and responsible growth.
             </li>
           </ul>
@@ -53,17 +51,12 @@ export default function ConsultingIntro() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-gray-900">Why Kerberos?</h2>
           <p className="text-gray-700">
-            We blend data‑driven insight with deep industry know‑how to deliver
+            We blend data-driven insight with deep industry know-how to deliver
             tailored solutions and measurable impact—helping organisations
             thrive today and lead tomorrow.
           </p>
         </section>
       </main>
-
-      {/* CTA */}
-      <div className="mt-auto w-full max-w-3xl mx-auto px-4 pb-12 flex justify-end">
-        <NextButton href="/services/consulting/consulting-info" />
-      </div>
     </div>
   );
 }

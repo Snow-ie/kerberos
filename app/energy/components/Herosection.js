@@ -22,19 +22,11 @@ const slides = [
       "Helping organisations transition to greener, more resilient operations.",
     link: "/services/consulting/energy-info",
   },
-  {
-    image: "/image/energyImg3.jpg",
-    title: "Oil & Gas Optimisation",
-    description:
-      "Maximising efficiency and profitability through advanced advisory.",
-    link: "/services/consulting/energy-info",
-  },
 ];
 
 export default function EnergyHeroSection() {
   const [current, setCurrent] = useState(0);
 
-  /* auto‑cycle every 5 s */
   useEffect(() => {
     const id = setInterval(
       () => setCurrent((i) => (i === slides.length - 1 ? 0 : i + 1)),
@@ -43,7 +35,6 @@ export default function EnergyHeroSection() {
     return () => clearInterval(id);
   }, []);
 
-  /* smooth‑scroll trigger */
   const scrollNext = () => {
     window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
   };
@@ -73,7 +64,6 @@ export default function EnergyHeroSection() {
         </Link>
       </AnimatePresence>
 
-      {/* overlay text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-white pointer-events-none">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
           {slides[current].title}
@@ -81,7 +71,6 @@ export default function EnergyHeroSection() {
         <p className="text-lg md:text-xl mt-2">{slides[current].description}</p>
       </div>
 
-      {/* scroll‑down arrow */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
         <button
           onClick={scrollNext}

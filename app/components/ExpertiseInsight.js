@@ -49,12 +49,12 @@ const ExpertInsights = () => {
                 <p className="text-gray-600 mt-2 text-sm">
                   {insight.description}
                 </p>
-                <a
+                {/* <a
                   href={insight.link}
                   className="text-green-700 font-medium hover:underline mt-3 inline-block"
                 >
                   Read More
-                </a>
+                </a> */}
               </div>
             </div>
           ))}

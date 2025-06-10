@@ -15,7 +15,7 @@ const LeadershipTeam = () => {
 
       <div className="mt-10 flex md:flex-row flex-col justify-center gap-16 sm:gap-12">
         <div className="flex flex-col items-center">
-          <div className="w-[180px] h-[240px] bg-gray-300 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-all">
+          <div className="w-[180px] h-[240px] overflow-hidden shadow-lg hover:scale-105 transition-all">
             <Image
               src="/image/leaderShip2.svg"
               alt="Leadership Member 1"
@@ -31,7 +31,7 @@ const LeadershipTeam = () => {
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="w-[180px] h-[240px] bg-gray-300 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-all">
+          <div className="w-[180px] h-[240px] overflow-hidden shadow-lg hover:scale-105 transition-all">
             <Image
               src="/image/leaderShip1.svg"
               alt="Leadership Member 2"

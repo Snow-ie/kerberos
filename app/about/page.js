@@ -12,7 +12,7 @@ const AboutUS = () => {
       <IntroSection />
       <BusinessHistory />
       <MissionVision />
-      <CoreServices />
+      {/* <CoreServices /> */}
       <LeadershipTeam />
       <WhyChooseUs />
     </div>

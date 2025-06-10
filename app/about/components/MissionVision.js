@@ -4,7 +4,6 @@ const MissionVision = () => {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2  px-6">
-        {/* Mission Section */}
         <div className="flex flex-col justify-center">
           <h2 className="text-2xl font-bold text-secondary">Our Mission</h2>
           <div className="flex items-start mt-4">

@@ -19,18 +19,11 @@ const slides = [
     description: "Safeguarding your digital assets with world‑class solutions.",
     link: "/services/consulting/technology-info",
   },
-  {
-    image: "/image/techImg1.jpg",
-    title: "Digital Transformation",
-    description: "Driving efficiency with automation & AI.",
-    link: "/services/consulting/technology-info",
-  },
 ];
 
 export default function TechHeroSection() {
   const [current, setCurrent] = useState(0);
 
-  /* auto‑cycle slides */
   useEffect(() => {
     const id = setInterval(
       () => setCurrent((i) => (i === slides.length - 1 ? 0 : i + 1)),
@@ -67,7 +60,6 @@ export default function TechHeroSection() {
         </Link>
       </AnimatePresence>
 
-      {/* overlay text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-white pointer-events-none">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
           {slides[current].title}
@@ -75,7 +67,6 @@ export default function TechHeroSection() {
         <p className="text-lg md:text-xl mt-2">{slides[current].description}</p>
       </div>
 
-      {/* scroll arrow */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
         <button
           onClick={scrollDown}
