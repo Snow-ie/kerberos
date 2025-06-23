@@ -1,6 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import ServiceHero from "../../components/ServiceHero";
+import technologySpecialties from "@/data/technologySpecialties";
 
 export default function TechnologyInfo() {
   return (
@@ -12,56 +14,54 @@ export default function TechnologyInfo() {
       />
 
       <main className="w-full container mx-auto px-4 py-12 space-y-10">
-        <header className="space-y-2">
+        <motion.header
+          className="space-y-2"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className="text-3xl font-bold text-gray-900">
             Kerberos Technologies.
           </h1>
           <p className="text-base font-medium text-indigo-600">
             Transforming Businesses Through Innovation
           </p>
-        </header>
+        </motion.header>
 
-        {/* intro */}
-        <p className="text-gray-700 leading-relaxed">
-          Kerberos&nbsp;Technologies delivers cutting-edge digital solutions
-          that enable organisations to adapt, scale, and lead in the age of
+        <motion.p
+          className="text-gray-700 leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Kerberos Technologies delivers cutting-edge digital solutions that
+          enable organisations to adapt, scale, and lead in the age of
           disruption. Our deep technical expertise and agile delivery models
           support clients in cybersecurity, systems integration, and enterprise
           software development.
-        </p>
+        </motion.p>
 
-        {/* focus areas */}
-        <section className="space-y-6">
+        <motion.section
+          className="space-y-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           <h2 className="text-xl font-semibold text-gray-900">
             Our Focus Areas Include
           </h2>
+
           <ul className="list-disc list-inside space-y-4 text-gray-700">
-            <li>
-              <strong>Cybersecurity Solutions — </strong>
-              Advanced security measures, threat intelligence, and proactive
-              defence strategies to ensure business continuity and data
-              integrity.
-            </li>
-            <li>
-              <strong>Digital Transformation &amp; Automation — </strong>
-              AI-driven and automated solutions that streamline operations,
-              boost productivity, and unlock new efficiencies.
-            </li>
-            <li>
-              <strong>Custom Software Development — </strong>
-              Bespoke applications tailored to your unique business needs,
-              delivering innovation and competitive advantage.
-            </li>
-            <li>
-              <strong>Cloud Solutions &amp; Infrastructure — </strong>
-              Scalable, secure cloud architecture that optimises performance
-              while reducing IT costs.
-            </li>
-            <li>
-              <strong>Database Architecture &amp; Administration — </strong>
-              Designing, optimising, and managing efficient, scalable databases
-              that evolve with your applications.
-            </li>
+            {technologySpecialties.map((item, index) => (
+              <motion.li
+                key={item.title}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 + index * 0.1 }}
+              >
+                <strong>{item.title}</strong> {item.desc}
+              </motion.li>
+            ))}
           </ul>
 
           <h2 className="text-xl font-semibold text-gray-900">Our Impact</h2>
@@ -71,7 +71,7 @@ export default function TechnologyInfo() {
             Force—providing robust, scalable solutions that ensure digital
             resilience.
           </p>
-        </section>
+        </motion.section>
       </main>
     </div>
   );

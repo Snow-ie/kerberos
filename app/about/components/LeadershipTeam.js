@@ -1,61 +1,77 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import teamMembers from "@/data/teamMembers";
 
 const LeadershipTeam = () => {
   return (
     <section className="py-16 bg-white text-center">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl sm:text-3xl font-bold text-text">
+        <motion.h2
+          className="text-2xl sm:text-3xl font-bold text-text"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           Meet Our Leadership Team
-        </h2>
-        <p className="text-text-hover mt-2 leading-relaxed max-w-2xl mx-auto">
+        </motion.h2>
+
+        <motion.p
+          className="text-text-hover mt-2 leading-relaxed max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           Led by seasoned experts, our leadership delivers innovative, tailored
           solutions that empower businesses to thrive and grow sustainably.
-        </p>
+        </motion.p>
       </div>
 
-      <div className="mt-10 flex md:flex-row flex-col justify-center gap-16 sm:gap-12">
-        <div className="flex flex-col items-center">
-          <div className="w-[180px] h-[240px] overflow-hidden shadow-lg hover:scale-105 transition-all">
-            <Image
-              src="/image/leaderShip2.svg"
-              alt="Leadership Member 1"
-              width={180}
-              height={240}
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <h3 className="mt-3 text-lg font-semibold text-text">
-            Kizito Ofornagoro
-          </h3>
-          <p className="text-sm text-text-hover italic">CEO, Kerberos</p>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <div className="w-[180px] h-[240px] overflow-hidden shadow-lg hover:scale-105 transition-all">
-            <Image
-              src="/image/leaderShip1.svg"
-              alt="Leadership Member 2"
-              width={180}
-              height={240}
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <h3 className="mt-3 text-lg font-semibold text-text">
-            Haruna Madisca
-          </h3>
-          <p className="text-sm text-text-hover italic">MD, Kerberos</p>
-        </div>
+      <div className="mt-12 flex flex-col md:flex-row justify-center gap-12">
+        {teamMembers.map((member, index) => (
+          <motion.div
+            key={member.name}
+            className="flex flex-col items-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 * index }}
+            viewport={{ once: true }}
+          >
+            <div className="w-[180px] h-[240px] overflow-hidden rounded-md shadow-lg hover:scale-105 transition-transform duration-300">
+              <Image
+                src={member.img}
+                alt={member.name}
+                width={180}
+                height={240}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <h3 className="mt-4 text-lg font-semibold text-text">
+              {member.name}
+            </h3>
+            <p className="text-sm text-text-hover italic">{member.title}</p>
+          </motion.div>
+        ))}
       </div>
 
-      <div className="mt-8 flex justify-center">
+      <motion.div
+        className="mt-10 flex justify-center"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        viewport={{ once: true }}
+      >
         <a
           href="#"
           className="border border-green-700 text-green-700 px-6 py-2 rounded-md font-medium 
-          hover:bg-green-100 transition-all hover:shadow-md"
+            hover:bg-green-100 transition-all hover:shadow-md"
         >
           Meet Our Team
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 };

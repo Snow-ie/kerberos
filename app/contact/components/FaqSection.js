@@ -5,12 +5,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Plus } from "lucide-react";
 import faqs from "@/data/faqs";
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleFAQ = (index) => {
-    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
+  const toggleFAQ = (i) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
     <motion.section
@@ -19,57 +31,61 @@ const FAQSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <motion.h2
-        className="text-3xl md:text-4xl font-semibold text-center text-gray-900"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-      >
-        Frequently Asked Questions
-      </motion.h2>
-      <motion.p
-        className="text-center text-gray-600 mt-2"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
-        Answers to common inquiries about our services.
-      </motion.p>
-
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10"
+        className="text-center mb-10"
         initial="hidden"
         animate="visible"
         variants={{
-          hidden: { opacity: 0, y: 10 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { staggerChildren: 0.15 },
-          },
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.1 } },
         }}
       >
-        {faqs.map((faq, index) => (
+        <motion.h2
+          className="text-3xl md:text-4xl font-semibold text-gray-900"
+          variants={{
+            hidden: { opacity: 0, y: -10 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Frequently Asked Questions
+        </motion.h2>
+        <motion.p
+          className="text-gray-600 mt-2"
+          variants={{
+            hidden: { opacity: 0, y: -5 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          Answers to common inquiries about our services.
+        </motion.p>
+      </motion.div>
+
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        {faqs.map((faq, idx) => (
           <motion.div
-            key={index}
-            className="border h-fit border-gray-200 rounded-lg shadow-sm flex flex-col justify-between w-full"
-            variants={{
-              hidden: { opacity: 0, y: 10 },
-              visible: { opacity: 1, y: 0 },
-            }}
+            key={idx}
+            className="border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+            variants={itemVariants}
           >
             <button
-              className="flex justify-between items-center w-full p-5 text-gray-900 font-medium hover:bg-gray-100 transition-all"
-              onClick={() => toggleFAQ(index)}
-              aria-expanded={openIndex === index}
-              aria-controls={`faq-content-${index}`}
+              className="w-full flex justify-between items-center p-5 text-gray-900 font-medium hover:bg-gray-100 transition"
+              onClick={() => toggleFAQ(idx)}
+              aria-expanded={openIndex === idx}
+              aria-controls={`faq-${idx}`}
             >
-              <span className="text-lg">{faq.question}</span>
+              <span>{faq.question}</span>
               <motion.div
-                animate={{ rotate: openIndex === index ? 180 : 0 }}
+                animate={{ rotate: openIndex === idx ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                {openIndex === index ? (
+                {openIndex === idx ? (
                   <ChevronDown className="w-5 h-5 text-primary" />
                 ) : (
                   <Plus className="w-5 h-5 text-primary" />
@@ -77,11 +93,11 @@ const FAQSection = () => {
               </motion.div>
             </button>
 
-            <AnimatePresence>
-              {openIndex === index && (
+            <AnimatePresence initial={false}>
+              {openIndex === idx && (
                 <motion.div
-                  id={`faq-content-${index}`}
-                  className="overflow-hidden p-5 text-gray-700"
+                  id={`faq-${idx}`}
+                  className="p-5 text-gray-700"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}

@@ -31,7 +31,7 @@ export default function ServiceHero({
         fill
         priority
         sizes="(min-width: 1024px) 1024px, 100vw"
-        className="object-cover w-full h-full"
+        className="object-cover   w-full h-full"
       />
     </div>
   );

@@ -17,7 +17,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function ArticlePage({ params }) {
+// ✅ Make this async
+export default async function ArticlePage({ params }) {
   const article = slides.find((s) => s.slug === params.slug);
   if (!article) return notFound();
 
@@ -29,7 +30,6 @@ export default function ArticlePage({ params }) {
 
   return (
     <main className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
-      {/* Hero */}
       <header className="relative h-80 md:h-96 w-full">
         <Image
           src={article.background}
@@ -49,7 +49,6 @@ export default function ArticlePage({ params }) {
         </div>
       </header>
 
-      {/* Content */}
       <article className="mx-auto w-full container grow px-6 py-12">
         <div
           className={`${contentClass} leading-relaxed [&>*]:tracking-normal prose-headings:font-semibold`}
