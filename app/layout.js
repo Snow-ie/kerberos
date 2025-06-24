@@ -9,7 +9,6 @@ export const metadata = {
     "Kerberos Group empowers businesses with strategic consulting, innovative technologies, and sustainable energy solutions.",
   icons: {
     icon: "/image/mainLogo.svg",
-    apple: "/apple-touch-icon.png",
   },
 };
 export const viewport = {
