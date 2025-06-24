@@ -9,4 +9,6 @@ deployment:
     - /usr/bin/env npm run export         # puts static files in ./out
 
     # 3) Deploy ← overwrite anything that changed / was deleted
-    - /usr/bin/env rsync -av --delete-after ./out/ /home/kerberos/public_html/
+    #- /usr/bin/env rsync -av --delete-after ./out/ /home/kerberos/public_html/
+    - export DEPLOYPATH=/home/kerberos/public_html/
+    - /bin/cp -R images $DEPLOYPATH
