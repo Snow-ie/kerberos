@@ -2,13 +2,13 @@
 deployment:
   tasks:
     # 1) Install prod-only packages
-    - /usr/bin/env npm ci --ignore-scripts
+    - npm install
 
     # 2) Build your Next.js project
-    - /usr/bin/env npm run build          # runs "next build"
-    - /usr/bin/env npm run export         # puts static files in ./out
+    - npm run build          # runs "next build"
+    - npm run export         # puts static files in ./out
 
     # 3) Deploy ← overwrite anything that changed / was deleted
     #- /usr/bin/env rsync -av --delete-after ./out/ /home/kerberos/public_html/
     - export DEPLOYPATH=/home/kerberos/public_html/
-    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R out/* $DEPLOYPATH
