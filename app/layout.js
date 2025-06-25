@@ -4,9 +4,10 @@ import Footer from "./components/Footer";
 import BusinessCTA from "./components/BusinessCTA";
 
 export const metadata = {
-  title: "Kerberos Group – Consulting • Technology • Energy",
+  title: "Kerberos Group - Consulting • Technology • Energy",
   description:
     "Kerberos Group empowers businesses with strategic consulting, innovative technologies, and sustainable energy solutions.",
+  keywords: ["kerberos", "consulting", "technology", "energy"],
   icons: {
     icon: "/image/mainLogo.svg",
   },
