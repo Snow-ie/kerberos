@@ -54,13 +54,13 @@ const ContactSupport = () => {
           </p>
 
           {[
-            {
-              icon: FaComments,
-              title: "Chat to Support",
-              description: "Chat to our staff 24/7 for instant support",
-              link: "#",
-              linkText: "Start Live Chat",
-            },
+            // {
+            //   icon: FaComments,
+            //   title: "Chat to Support",
+            //   description: "Chat to our staff 24/7 for instant support",
+            //   link: "#",
+            //   linkText: "Start Live Chat",
+            // },
             {
               icon: FaPhone,
               title: "Call Us",
@@ -71,8 +71,8 @@ const ContactSupport = () => {
               icon: FaEnvelope,
               title: "Email Support",
               description: "Email us & we will get back to you within 24 hours",
-              link: "mailto:support@apexadvisory.com",
-              linkText: "support@apexadvisory.com",
+              link: "mailto:support@mail.kerberos.ng",
+              linkText: "support@mail.kerberos.ng",
             },
             {
               icon: FaMapMarkerAlt,

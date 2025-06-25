@@ -64,13 +64,13 @@ const LeadershipTeam = () => {
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true }}
       >
-        <a
+        {/* <a
           href="#"
           className="border border-green-700 text-green-700 px-6 py-2 rounded-md font-medium 
             hover:bg-green-100 transition-all hover:shadow-md"
         >
           Meet Our Team
-        </a>
+        </a> */}
       </motion.div>
     </section>
   );

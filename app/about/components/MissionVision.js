@@ -38,7 +38,7 @@ const MissionVision = () => {
             alt="Mission Image"
             width={600}
             height={400}
-            className="w-full h-auto object-cover"
+            className="object-cover w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto"
             priority
           />
         </motion.div>
@@ -55,7 +55,7 @@ const MissionVision = () => {
             alt="Vision Image"
             width={600}
             height={400}
-            className="w-full h-auto object-cover"
+            className="object-cover w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto"
             priority
           />
         </motion.div>

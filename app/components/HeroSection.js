@@ -14,14 +14,14 @@ const responsive = {
   mobile: { breakpoint: { max: 480, min: 0 }, items: 1 },
 };
 
-/* 
-// Custom Arrows (currently disabled)
 const CustomRightArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute top-1/2 right-6 -translate-y-1/2 bg-primary text-white p-3 rounded-full shadow-md hover:bg-opacity-80 transition"
+    className="hidden md:inline-flex absolute top-1/2 right-6 -translate-y-1/2
+               bg-primary text-white p-3 rounded-full shadow-md
+               hover:bg-opacity-80 transition"
   >
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
         d="M9 18l6-6-6-6"
         stroke="currentColor"
@@ -36,9 +36,12 @@ const CustomRightArrow = ({ onClick }) => (
 const CustomLeftArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute top-1/2 left-6 -translate-y-1/2 bg-primary text-white p-3 rounded-full shadow-md hover:bg-opacity-80 transition"
+    /* same hidden-on-small rule */
+    className="hidden md:inline-flex absolute top-1/2 left-6 -translate-y-1/2
+               bg-primary text-white p-3 rounded-full shadow-md
+               hover:bg-opacity-80 transition"
   >
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
         d="M15 18l-6-6 6-6"
         stroke="currentColor"
@@ -49,7 +52,6 @@ const CustomLeftArrow = ({ onClick }) => (
     </svg>
   </button>
 );
-*/
 
 const CustomDot = ({ onClick, active }) => (
   <button
@@ -79,9 +81,8 @@ const HomeCarousel = () => {
         transitionDuration={400}
         customTransition="transform 400ms ease-in-out"
         showDots
-        arrows={false}
-        // customRightArrow={<CustomRightArrow />}
-        // customLeftArrow={<CustomLeftArrow />}
+        customRightArrow={<CustomRightArrow />}
+        customLeftArrow={<CustomLeftArrow />}
         customDot={<CustomDot />}
         className="relative"
         dotListClass="absolute bottom-6 left-0 right-0 flex justify-center"
@@ -93,7 +94,7 @@ const HomeCarousel = () => {
             className="relative h-[90vh] md:h-screen flex items-center justify-center bg-cover bg-center cursor-pointer transition-all duration-700 ease-in-out bg-no-repeat"
             style={{ backgroundImage: `url(${slide.background})` }}
           >
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/50"></div>
 
             <motion.div
               className="text-center text-white z-10 px-6 md:px-12"
