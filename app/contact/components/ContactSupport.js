@@ -13,7 +13,7 @@ import Image from "next/image";
 const ContactSupport = () => {
   return (
     <motion.div
-      className="min-h-screen flex items-center justify-center bg-gray-100 p-6 pt-24"
+      className=" flex items-center justify-center bg-gray-100 p-6 pt-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -49,8 +49,8 @@ const ContactSupport = () => {
             Contact &amp; Support
           </h2>
           <p className="text-gray-600">
-            We're here to assist you. Whether it's inquiries, consultations, or
-            support, don't hesitate to reach out.
+            We&apos;re here to assist you. Whether it&apos;s inquiries,
+            consultations, or support, don&apos;t hesitate to reach out.
           </p>
 
           {[
@@ -65,7 +65,7 @@ const ContactSupport = () => {
               icon: FaPhone,
               title: "Call Us",
               description: "Monday – Friday, 9:00 AM – 6:00 PM",
-              contact: "+44 161 987 6543",
+              contact: "",
             },
             {
               icon: FaEnvelope,
